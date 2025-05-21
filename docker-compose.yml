@@ -1,0 +1,19 @@
+services:
+  mentor_swagger:
+    container_name: mentor_swagger
+    build:
+      context: ./swagger
+      dockerfile: Dockerfile
+    env_file: ./swagger/.env
+    ports:
+      - "9000:9000"
+    networks:
+      - mentor_network
+    # Только если нужно live-обновление кода:
+    volumes:
+      - ./swagger:/app
+    command: gunicorn -w 4 -k uvicorn.workers.UvicornWorker -b 0.0.0.0:9000 main:app
+
+networks:
+  mentor_network:
+    driver: bridge
