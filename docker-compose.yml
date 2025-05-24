@@ -24,6 +24,9 @@ services:
       --ssl-certfile /etc/letsencrypt/live/stlthwl.pro/fullchain.pem
       --ssl-version 2
 
+volumes:
+  swagger_data
+
 networks:
   mentor_network:
     driver: bridge
