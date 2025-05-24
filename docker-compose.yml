@@ -25,7 +25,7 @@ services:
       --ssl-version 2
 
 volumes:
-  swagger_data
+  swagger_data:
 
 networks:
   mentor_network:
