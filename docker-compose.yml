@@ -30,4 +30,4 @@ volumes:
 
 networks:
   mentor_network:
-    driver: bridge
+    external: true
